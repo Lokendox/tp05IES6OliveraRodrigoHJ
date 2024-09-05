@@ -1,27 +1,30 @@
 package ar.edu.ies6.informatica.punto05;
 
 import java.time.LocalDate;
+import java.time.Period;
 
-public class Main {
+public class Persona {
     private String dni;
     private String nombre;
     private LocalDate fechaNacimiento;
     private String provincia;
     
-    public Main() {
+    public Persona() {
+        this.provincia = "Jujuy";
     }
-    public Main(String dni, String nombre, LocalDate fechaNacimiento, String provincia) {
+    public Persona(String dni, String nombre, LocalDate fechaNacimiento, String provincia) {
         this.dni = dni;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.provincia = provincia;
     }
-    public Main(String dni, String nombre, LocalDate fechaNacimiento) {
+    public Persona(String dni, String nombre, LocalDate fechaNacimiento) {
         this.dni = dni;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.provincia = "Jujuy";
     }
+    
     public int calcularEdad() {
         LocalDate fechaActual = LocalDate.now();
         int edad = fechaActual.getYear() - fechaNacimiento.getYear();
